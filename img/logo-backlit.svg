@@ -1,0 +1,108 @@
+<!--!
+   - Copyright (C) ICON plc - All Rights Reserved
+   - Unauthorized copying of this file via any medium is strictly prohibited
+   - Proprietary and confidential
+   -
+   - Created by Matt Coster <Matt.Coster [at] icon-plc.co.uk>, 12 June 2017
+  -->
+
+<?xml version="1.0" encoding="UTF-8"?>
+<svg version="1.1" baseProfile="full"
+     width="220" height="120" viewBox="0 0 220 120"
+     xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink">
+
+    <defs>
+        <path d="M 0 10
+                 V 50
+                 A 10 10 0 0 0 10 60
+                 H 70
+                 A 10 10 0 0 0 80 50
+                 V 10
+                 A 10 10 0 0 0 70 0
+                 H 10
+                 A 10 10 0 0 0 0 10
+                 Z
+                 M 15 12
+                 H 65
+                 V 48
+                 H 15
+                 V 12
+                 Z"
+              id="qPath" fill-rule="evenodd" />
+
+        <path d="M 44 34
+                 V 64
+                 A 10 10 0 0 0 54 74
+                 H 56
+                 V 44
+                 A 10 10 0 0 0 46 34
+                 H 44
+                 Z"
+              id="qBarPath" fill-rule="evenodd" transform="rotate(-35, 50, 54)" />
+
+        <path d="M 0 10
+                 V 50
+                 A 10 10 0 0 0 10 60
+                 H 70
+                 A 10 10 0 0 0 80 50
+                 V 35
+                 A 10 10 0 0 0 70 24
+                 H 39
+                 A 10 10 0 0 0 29 34
+                 V 36
+                 H 65
+                 V 48
+                 H 15
+                 V 12
+                 H 80
+                 V 10
+                 A 10 10 0 0 0 70 0
+                 H 10
+                 A 10 10 0 0 0 0 10
+                 Z"
+              id="gPath" fill-rule="evenodd" transform="translate(82)" />
+
+        <radialGradient id="backlight">
+            <stop offset="0%" stop-color="#fff" stop-opacity="0.933333333333" /> <!-- #eee -->
+            <stop offset="5%" stop-color="#fff" stop-opcaity="0.733333333333" /> <!-- #bbb -->
+            <stop offset="30%" stop-color="#fff" stop-opacity="0.466666666667" /> <!-- #777 -->
+            <stop offset="95%" stop-color="#fff" stop-opacity="0" /> <!-- #000 -->
+        </radialGradient>
+    </defs>
+
+    <rect id="background" width="100%" height="100%" fill="url(#backlight)"
+          clip-path="url(#qgLetters)" clip-rule="evenodd">
+        <animate id="anim-w-in" attributeType="XML" attributeName="width"
+                 from="0%" to="100%" dur="5s" repeatCount="1"
+                 keySplines="0 0 0.3 1" />
+        <animate id="anim-h-in" attributeType="XML" attributeName="height"
+                 from="0%" to="100%" dur="5s" repeatCount="1"
+                 keySplines="0 0 0.3 1" />
+        <animate id="anim-x-in" attributeType="XML" attributeName="x"
+                 from="50%" to="0%" dur="5s" repeatCount="1"
+                 keySplines="0 0 0.3 1" />
+        <animate id="anim-y-in" attributeType="XML" attributeName="y"
+                 from="50%" to="0%" dur="5s" repeatCount="1"
+                 keySplines="0 0 0.3 1" />
+
+        <animate id="anim-w-breathe" attributeType="XML" attributeName="width"
+                 values="100%; 90%; 100%" dur="10s" repeatCount="indefinite"
+                 keySplines="0.7 0 0.3 1; 0.7 0 0.3 1" begin="5s" />
+        <animate id="anim-h-breathe" attributeType="XML" attributeName="height"
+                 values="100%; 90%; 100%" dur="10s" repeatCount="indefinite"
+                 keySplines="0.7 0 0.3 1; 0.7 0 0.3 1" begin="5s" />
+        <animate id="anim-x-breathe" attributeType="XML" attributeName="x"
+                 values="0%; 5%; 0%" dur="10s" repeatCount="indefinite"
+                 keySplines="0.7 0 0.3 1; 0.7 0 0.3 1" begin="5s" />
+        <animate id="anim-y-breathe" attributeType="XML" attributeName="y"
+                 values="0%; 5%; 0%" dur="10s" repeatCount="indefinite"
+                 keySplines="0.7 0 0.3 1; 0.7 0 0.3 1" begin="5s" />
+    </rect>
+
+    <g transform="translate(31, 30)" fill="black">
+        <use xlink:href="#qPath" />
+        <use xlink:href="#gPath" />
+        <use xlink:href="#qBarPath" />
+    </g>
+</svg>
