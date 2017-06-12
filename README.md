@@ -1,1 +1,3 @@
-# Under construction
+# QuoteGrater by ICON
+
+Coming soon
